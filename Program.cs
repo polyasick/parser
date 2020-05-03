@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+//Вывод дерева, как в обратной польской записи
 /* Grammar:
  * E -> T E'
  * E' -> + T E' | - T E' | ε
