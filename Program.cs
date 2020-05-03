@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//Вывод дерева, как в обратной польской записи
 /* Grammar:
  * E -> T E'
  * E' -> + T E' | - T E' | ε
@@ -103,11 +102,10 @@ namespace синтаксический_анализатор
 
         class SyntaxAnalyzer
         {
-            public static string getParse(List<Lexem> lexems) 
+            public static void getParse(List<Lexem> lexems) 
             {
                 syntax parsStr = new syntax(lexems);
                 parseE(parsStr).output();
-                return null;
             }
 
             //Правила
@@ -262,7 +260,7 @@ namespace синтаксический_анализатор
                     //    Console.WriteLine(lexem.TokType + " " + lexem.Value);
                     //}
                     var lexems = LexicalAnalyzer.getLex(str); //Запуск лексического анализатора
-                    var parseStr = SyntaxAnalyzer.getParse(lexems);
+                    SyntaxAnalyzer.getParse(lexems);
 
                 }
 
